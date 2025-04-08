@@ -6,9 +6,9 @@
         body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f0f4f8; }
         .header { background: linear-gradient(to right, #1a3c5e, #2c5282); color: white; padding: 60px 20px; text-align: center; }
         h1 { font-size: 50px; margin: 0; }
-        .tagline { font-size: 22px; margin: 10px 0; }
+        .tagline { font-size: 22px; margin: 10px 0; color: #ffffff; } /* White tagline */
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        h2 { font-size: 30px; color: #1a3c5e; border-bottom: 2px solid #2c5282; padding-bottom: 5px; }
+        h2 { font-size: 30px; colorKsi: color: #1a3c5e; border-bottom: 2px solid #2c5282; padding-bottom: 5px; }
         p { font-size: 18px; color: #4a5568; line-height: 1.7; }
         .section { margin: 50px 0; }
         .research-item { margin: 20px 0; }
@@ -16,67 +16,87 @@
         .skills-list li { margin: 5px 0; }
         a { color: #2b6cb0; text-decoration: none; }
         a:hover { text-decoration: underline; }
+
+        /* Tab Styles */
+        .tab-bar { overflow: hidden; border-bottom: 2px solid #2c5282; }
+        .tab-button { background-color: #f0f4f8; color: #1a3c5e; float: left; border: none; outline: none; cursor: pointer; padding: 14px 16px; font-size: 18px; transition: 0.3s; }
+        .tab-button:hover { background-color: #ddd; }
+        .tab-button.active { background-color: #2c5282; color: white; }
+        .tab-content { display: none; padding: 20px; background-color: white; border: 1px solid #ccc; border-top: none; }
+        .tab-content.active { display: block; }
+        .gallery-img { width: 200px; height: auto; margin: 10px; border-radius: 5px; }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Esteban Eduardo Morales Rojas</h1>
         <p class="tagline">PhD Student | Materials Science & Engineering | UMass Amherst</p>
-        <img src="/Esteban_Lab.jpg" alt="Esteban in the Lab" style="width: 200px; border-radius: 50%; margin-top: 20px;">
+        <img src="Esteban_Lab.jpg" alt="Esteban in the Lab" style="width: 200px; border-radius: 50%; margin-top: 20px;">
     </div>
     <div class="container">
         <div class="section">
             <h2>About Me</h2>
-            <p>Welcome! I’m Esteban, a passionate technologist and engineer driving innovation in wearable tech. With expertise in electronics, programming, and energy harvesting, I’m thrilled to create impactful solutions that enhance everyday life. .</p>
+            <p>Welcome! I’m Esteban, a passionate technologist and engineer driving innovation in wearable tech. With expertise in electronics, programming, and energy harvesting, I’m thrilled to create impactful solutions that enhance everyday life.</p>
         </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+            <button class="tab-button active" onclick="openTab(event, 'Gallery')">Gallery</button>
+            <button class="tab-button" onclick="openTab(event, 'Research')">Research Contributions</button>
+            <button class="tab-button" onclick="openTab(event, 'Contact')">Contact</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="Gallery" class="tab-content active">
+            <h2>Gallery</h2>
+            <img class="gallery-img" src="Esteban_Lab.jpg" alt="Lab Photo 1">
+            <!-- Add more images here, e.g.: -->
+            <!-- <img class="gallery-img" src="photo2.jpg" alt="Lab Photo 2"> -->
+            <!-- <img class="gallery-img" src="photo3.jpg" alt="Lab Photo 3"> -->
+            <p>More photos coming soon!</p>
+        </div>
+
+        <div id="Research" class="tab-content">
+            <h2>Research Contributions</h2>
+            <p><strong>Thesis:</strong> <a href="thesis.pdf" download>“Implementation of a sensor-device based on the Michelson interferometer in open space to detect imperfections in reflective flat reflective surfaces”</a></p>
+            <p><strong>Other Documents:</strong></p>
+            <ul>
+                <li><a href="document1.pdf" download>KAUST Solar Cell Research Paper</a></li>
+                <!-- Add more document links as needed -->
+            </ul>
+        </div>
+
+        <div id="Contact" class="tab-content">
+            <h2>Contact</h2>
+            <img src="Esteban_Lab.jpg" alt="Esteban" style="width: 150px; border-radius: 50%; float: left; margin-right: 20px;">
+            <p><a href="mailto:estebanmorales317@aragon.unam.mx">estebanmorales317@aragon.unam.mx</a></p>
+            <p>Phone: (+52) 5659224309</p>
+            <p>CV: <a href="CV_Esteban_Morales_W.pdf" download>Download My CV</a></p>
+        </div>
+
+        <!-- Existing Sections -->
         <div class="section">
             <h2>Academic Journey</h2>
             <p><strong>Bachelor’s degree in Electrical & Electronic Engineering</strong><br>UNAM, Mexico City | Aug 2019 - May 2023 | GPA: 9.09/10<br>Thesis: “Implementation of a sensor-device based on the Michelson interferometer in open space to detect imperfections in reflective flat reflective surfaces”<br>Advisor: Gabriel Eduardo Sandoval Romero, PhD</p>
             <p><strong>PhD in Materials Science & Engineering</strong><br>UMass Amherst | Starting Fall 2025 |</p>
         </div>
-        <div class="section">
-            <h2>Research Highlights</h2>
-            <div class="research-item">
-                <p><strong>KAUST Solar Center, Ultrafast Dynamics Group</strong> | Saudi Arabia | 2023-2024<br>Manufacturing of organic solar cells with active layer of P3HT:PCBM and characterization using Solar Simulator, characterization with PAIOS.</p>
-            </div>
-            <div class="research-item">
-                <p><strong>KAUST Solar Center, Ultrafast Dynamics Group</strong> | Saudi Arabia | 2023-2024<br>Design and improvement of setup to measure the sensitive External Quantum Efficiency (sEQE) of Organic Solar Cells (OSC) creating a routine through LabVIEW. Complete automation of the setup, possibility of performing measurements remotely.</p>
-            </div>
-            <div class="research-item">
-                <p><strong>ICAT-UNAM, Fiber Optic Sensors Lab</strong> | Mexico | 2022-2023<br>Implementation of a sensor-device based on the Michelson interferometer in open space to detect imperfections in flat reflective surfaces (bachelor's degree thesis topic).</p>
-            </div>
-            <div class="research-item">
-                <p><strong>ICAT-UNAM, Fiber Optic Sensors Lab</strong> | Mexico | 2022<br>Implementation of the Michelson interferometer in open space to determine refractive indices in different transparent solid materials.</p>
-            </div>
-             <div class="research-item">
-                <p><strong>ICAT-UNAM, Fiber Optic Sensors Lab</strong> | Mexico | 2022<br>Implementation of a control circuit for a laser diode, power supply and protection against high voltages.</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python, C++, Java, Javascript</li>
-                <li>HTML, Matlab</li>
-                <li>LabVIEW, Multisim, Proteus</li>
-                <li>Fusion 360, KiCad, FreeCAD</li>
-                <li>PCB Design & Fabrication</li>
-                <li>Optoelectronics & Sensors</li>
-                <li>Solar Cell Characterization</li>
-                <li>3D Printing & Hardware</li>
-            </ul>
-        </div>
-        <div class="section">
-            <h2>Awards & Honors</h2>
-            <p>KAUST Visiting Student Program (2023-2024) | UNAM Academic Excellence Scholarship (2021-2022) | UNAM High-Achieving Graduate Scholarship (2024-2025) | Support PAPIIT 104123 project thesis UNAM (2021-2023)</p>
-        </div>
-        <div class="section">
-            <h2>Mission</h2>
-            <p>I’m here to build wearable tech that’s comfy, affordable, and life-changing—think self-powered sensors and non-invasive health monitors. With UMass Amherst and WeLab, I’ll push optoelectronics to the edge and back.</p>
-        </div>
-        <div class="section">
-            <h2>Contact</h2>
-            <p><a href="mailto:estebanmorales317@aragon.unam.mx">estebanmorales317@aragon.unam.mx</a> | (+52) 5659224309<br>CV: <a href="/CV_Esteban_Morales_W.pdf" download>Download My CV</a></p>
-        </div>
+        <!-- Keep your other sections (Research Highlights, Skills, etc.) as is -->
     </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tabbuttons;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tabbuttons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
