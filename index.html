@@ -31,15 +31,17 @@
             border-radius: 5px; 
             border: 2px solid #2c5282; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; 
+            transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, filter 0.4s ease-out;
             filter: grayscale(100%); 
             break-inside: avoid; 
             margin-bottom: 15px; 
         }
         .gallery-img:hover { 
-            transform: scale(1.05); 
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+            transform: scale(1.2); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
             filter: grayscale(0%); 
+            z-index: 10;
+            
         }
         @keyframes fadeIn { 
             from { opacity: 0; transform: translateY(20px); } 
@@ -145,7 +147,7 @@
 
         <div id="Contact" class="tab-content">
             <h2>Contact</h2>
-            <img src="Me_Contact.jpg" alt="Me at KAUST" style="width: 150px; border-radius: 50%; float: left; margin-right: 20px;">
+            <img src="Me_Contact.JPG" alt="Me at KAUST" style="width: 150px; border-radius: 50%; float: left; margin-right: 20px;">
             <p><a href="mailto:estebanmorales317@aragon.unam.mx">estebanmorales317@aragon.unam.mx</a></p>
             <p><a href="mailto:emoralesroja@umass.edu">emoralesroja@umass.edu</a></p>
             <p>Phone: (+52) 5659224309</p>
