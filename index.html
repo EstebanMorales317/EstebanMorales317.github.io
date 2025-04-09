@@ -22,7 +22,32 @@
         .tab-button.active { background-color: #2c5282; color: white; }
         .tab-content { display: none; padding: 20px; background-color: white; border: 1px solid #ccc; border-top: none; }
         .tab-content.active { display: block; }
-        .gallery-img { width: 200px; height: auto; margin: 10px; border-radius: 5px; }
+
+        /* Gallery Styles */
+        .gallery { column-count: 3; column-gap: 15px; }
+        .gallery-img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 5px; 
+            border: 2px solid #2c5282; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; 
+            filter: grayscale(100%); 
+            break-inside: avoid; 
+            margin-bottom: 15px; 
+        }
+        .gallery-img:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+            filter: grayscale(0%); 
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .tab-content.active .gallery-img { 
+            animation: fadeIn 0.5s ease forwards; 
+        }
     </style>
 </head>
 <body>
@@ -57,11 +82,10 @@
         <!-- Tab Content -->
         <div id="Research" class="tab-content active">
             <h2>Research Contributions</h2>
-            <p><strong>Thesis:</strong> <a href="https://tesiunam.dgb.unam.mx/F/JLM8M9RFNHCF95NEIP2K28REGQT75DJS72XMMEGK1XG5X12GHT-16463?func=full-set-set&set_number=058739&set_entry=000001&format=999" download>“Implementation of a sensor-device based on the Michelson interferometer in open space to detect imperfections in reflective flat reflective surfaces”</a></p>
+            <p><strong>Thesis:</strong> <a href="https://tesiunam.dgb.unam.mx/F/JLM8M9RFNHCF95NEIP2K28REGQT75DJS72XMMEGK1XG5X12GHT-16463?func=full-set-set&set_number=058739&set_entry=000001&format=999" target="_blank">“Implementation of a sensor-device based on the Michelson interferometer in open space to detect imperfections in reflective flat reflective surfaces”</a></p>
             <p><strong>Other Documents:</strong></p>
             <ul>
                 <li><a href="document1.pdf" download>KAUST Solar Cell Research Paper</a></li>
-                <!-- Add more document links here -->
             </ul>
 
             <h2>Academic Journey</h2>
@@ -98,35 +122,35 @@
             </ul>
         </div>
 
-       <div id="Gallery" class="tab-content">
-    <h2>Gallery</h2>
-    <img class="gallery-img" src="UNAM.jpg" alt="Me at UNAM">
-    <img class="gallery-img" src="TITULO.jpg" alt="My Degree Title">
-    <img class="gallery-img" src="Me_Mex.JPG" alt="Me in Mexico">
-    <img class="gallery-img" src="Me_Pyr.JPG" alt="Me at the Pyramids">
-    <img class="gallery-img" src="Me_Defense.JPG" alt="Me at Thesis Defense">
-    <img class="gallery-img" src="Pato.jpg" alt="Pato the Duck">
-    <img class="gallery-img" src="Saudi_Cake.JPG" alt="Cake in Saudi Arabia">
-    <img class="gallery-img" src="My_Name_KAUST.jpg" alt="My Name at KAUST">
-    <img class="gallery-img" src="Me_KAUST.jpg" alt="Me at KAUST">
-    <img class="gallery-img" src="Me_Horse.JPG" alt="Me with a Horse">
-    <img class="gallery-img" src="Me_Dub2.jpg" alt="Me in Dubai 1">
-    <img class="gallery-img" src="Me_Dub3.jpg" alt="Me in Dubai 2">
-    <img class="gallery-img" src="KAUST1.jpg" alt="KAUST Lab 1">
-    <img class="gallery-img" src="KAUST2.jpg" alt="KAUST Lab 2">
-    <p>More photos coming soon!</p>
-</div>
+        <div id="Gallery" class="tab-content">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img class="gallery-img" src="UNAM.jpg" alt="Me at UNAM">
+                <img class="gallery-img" src="TITULO.jpg" alt="My Degree Title">
+                <img class="gallery-img" src="Me_Mex.jpg" alt="Me in Mexico">
+                <img class="gallery-img" src="Me_Pyr.jpg" alt="Me at the Pyramids">
+                <img class="gallery-img" src="Me_Defense.jpg" alt="Me at Thesis Defense">
+                <img class="gallery-img" src="Pato.jpg" alt="Pato the Duck">
+                <img class="gallery-img" src="Saudi_Cake.jpg" alt="Cake in Saudi Arabia">
+                <img class="gallery-img" src="My_Name_KAUST.jpg" alt="My Name at KAUST">
+                <img class="gallery-img" src="Me_KAUST.jpg" alt="Me at KAUST">
+                <img class="gallery-img" src="Me_Horse.jpg" alt="Me with a Horse">
+                <img class="gallery-img" src="Me_Dub2.jpg" alt="Me in Dubai 1">
+                <img class="gallery-img" src="Me_Dub3.jpg" alt="Me in Dubai 2">
+                <img class="gallery-img" src="KAUST1.jpg" alt="KAUST Lab 1">
+                <img class="gallery-img" src="KAUST2.jpg" alt="KAUST Lab 2">
+            </div>
+            <p>More photos coming soon!</p>
+        </div>
 
         <div id="Contact" class="tab-content">
             <h2>Contact</h2>
-            <img src="Me_Contact.JPG" alt="Me at KAUST" style="width: 150px; border-radius: 50%; float: left; margin-right: 20px;">
+            <img src="Me_Contact.jpg" alt="Me at KAUST" style="width: 150px; border-radius: 50%; float: left; margin-right: 20px;">
             <p><a href="mailto:estebanmorales317@aragon.unam.mx">estebanmorales317@aragon.unam.mx</a></p>
             <p><a href="mailto:emoralesroja@umass.edu">emoralesroja@umass.edu</a></p>
             <p>Phone: (+52) 5659224309</p>
             <p>CV: <a href="CV_Esteban_Morales_W.pdf" download>Download My CV</a></p>
         </div>
-
-
     </div>
 
     <script>
