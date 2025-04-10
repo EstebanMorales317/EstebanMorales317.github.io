@@ -44,6 +44,38 @@
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
+.research-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+.skills-grid li {
+    background: #2c5282;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s;
+}
+.skills-grid li:hover {
+    background: #1a3c5e;
+}
         
 .research-section p:hover { 
     background: #e2e8f0; 
@@ -143,16 +175,16 @@
             </div>
 
             <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python, C++, Java, Javascript</li>
-                <li>HTML, Matlab</li>
-                <li>LabVIEW, Multisim, Proteus</li>
-                <li>Fusion 360, KiCad, FreeCAD</li>
-                <li>PCB Design & Fabrication</li>
-                <li>Optoelectronics & Sensors</li>
-                <li>Solar Cell Characterization</li>
-                <li>3D Printing & Hardware</li>
-            </ul>
+            <ul class="skills-grid">
+    <li>Python, C++, Java, Javascript</li>
+    <li>HTML, Matlab</li>
+    <li>LabVIEW, Multisim, Proteus</li>
+    <li>Fusion 360, KiCad, FreeCAD</li>
+    <li>PCB Design & Fabrication</li>
+    <li>Optoelectronics & Sensors</li>
+    <li>Solar Cell Characterization</li>
+    <li>3D Printing & Hardware</li>
+</ul>
         </div>
 
         <div id="Gallery" class="tab-content">
