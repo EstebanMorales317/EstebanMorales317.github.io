@@ -7,6 +7,7 @@
     <meta name="description" content="Esteban Morales - PhD Student in Materials Science & Engineering at UMass Amherst. Research in wearable tech, optoelectronics, and sensors.">
 <meta name="keywords" content="Esteban Morales, UMass Amherst, Materials Science, Wearable Electronics, Optoelectronics, GitHub, Research">
 <meta name="author" content="Esteban Eduardo Morales Rojas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f0f4f8; }
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -174,6 +175,155 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+        /* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive container */
+.container {
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive header */
+.header {
+    padding: 40px 10px;
+}
+.header img {
+    width: 150px; /* Smaller profile image on mobile */
+}
+
+/* Responsive typography */
+h1 {
+    font-size: 36px;
+}
+.tagline {
+    font-size: 18px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 20px;
+}
+p, .academic-section, .contact-info p {
+    font-size: 16px;
+}
+
+/* Responsive tab bar */
+.tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tab-button {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+.tab-content {
+    padding: 15px;
+}
+
+/* Responsive gallery */
+.gallery {
+    column-count: 1; /* Single column on mobile */
+}
+.gallery-img {
+    margin-bottom: 10px;
+    transform: none; /* Disable scale on hover for mobile */
+}
+.gallery-img:hover {
+    transform: none; /* Prevent zoom on mobile */
+    filter: grayscale(0%); /* Keep hover effect for color */
+}
+
+/* Responsive skills grid */
+.skills-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+}
+.skills-grid li {
+    font-size: 14px;
+    padding: 8px;
+}
+
+/* Responsive contact section */
+.contact-section {
+    flex-direction: column;
+    align-items: center;
+}
+.contact-photo {
+    width: 120px;
+    height: 120px;
+}
+.contact-info, .map-container {
+    min-width: 100%;
+    max-width: 100%;
+}
+.map-container iframe {
+    height: 250px;
+}
+
+/* Media query for tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+    .tagline {
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .container {
+        padding: 15px;
+    }
+    .header {
+        padding: 30px 10px;
+    }
+    .skills-list {
+        column-count: 1; /* Single column for older skills list */
+    }
+}
+
+/* Media query for small phones (480px and below) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    .tagline {
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    p, .academic-section, .contact-info p {
+        font-size: 14px;
+    }
+    .header img {
+        width: 100px;
+    }
+    .tab-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .research-item {
+        padding: 10px;
+    }
+    .contact-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
         
     </style>
 </head>
