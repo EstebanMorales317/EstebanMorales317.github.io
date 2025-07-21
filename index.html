@@ -42,10 +42,20 @@
             from { transform: scale(0.8); opacity: 0.7; }
             to { transform: scale(1); opacity: 1; }
         }
+        #header-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.3;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white text-center py-16 relative overflow-hidden">
+        <canvas id="header-canvas"></canvas>
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative z-10">
             <img src="Esteban_Lab.jpg" alt="Esteban in the Lab" class="header-img w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg object-cover">
@@ -158,6 +168,7 @@
                     <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:estebanmorales317@aragon.unam.mx" class="text-blue-600 hover:underline">estebanmorales317@aragon.unam.mx</a></p>
                     <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:emoralesroja@umass.edu" class="text-blue-600 hover:underline">emoralesroja@umass.edu</a></p>
                     <p class="text-gray-700"><strong>Phone:</strong> (+52) 5659224309</p>
+                    <p class="text-gray-700"><strong>Social:</strong> <a href="https://x.com/Esteban40910002" target="_blank" class="text-blue-600 hover:underline">X @Esteban40910002</a></p>
                     <p class="text-gray-700"><strong>CV:</strong> <a href="CV_Esteban_Morales_W.pdf" download class="text-blue-600 hover:underline">Download My CV</a></p>
                     <p class="text-gray-700"><strong>Location:</strong><br>The Wearable Electronics Lab<br>230 Physical Sciences Building<br>690 N. Pleasant St.<br>Amherst, MA 01003</p>
                 </div>
@@ -181,6 +192,62 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
+
+        // Canvas animation for header
+        const canvas = document.getElementById('header-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const symbols = [
+            '⚙️', '🔧', '🔩', '⚡️', '🔬', '📐', '🔌', '⚛️', '🔋', '📏'
+        ];
+
+        class Symbol {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
+                this.speedX = (Math.random() - 0.5) * 2;
+                this.speedY = (Math.random() - 0.5) * 2;
+                this.opacity = Math.random() * 0.3 + 0.1;
+                this.size = Math.random() * 20 + 10;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.font = `${this.size}px Roboto`;
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.fillText(this.symbol, this.x, this.y);
+            }
+        }
+
+        const symbolArray = Array.from({ length: 20 }, () => new Symbol());
+
+        function animate() {
+            ctx.clearRect(0,Параметры:0, width, height);
+            symbolArray.forEach(symbol => {
+                symbol.update();
+                symbol.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        animate();
     </script>
 </body>
 </html>
