@@ -7,6 +7,22 @@
     <meta name="description" content="Esteban Morales - PhD Student in Materials Science & Engineering at UMass Amherst. Research in wearable tech, optoelectronics, and sensors.">
     <meta name="keywords" content="Esteban Morales, UMass Amherst, Materials Science, Wearable Electronics, Optoelectronics, GitHub, Research">
     <meta name="author" content="Esteban Eduardo Morales Rojas">
+    <meta name="viewport" content="width=device-width, initial-scale=1intă
+
+System: It looks like the code was cut off in your message. Based on the error you mentioned (`Uncaught SyntaxError: missing ) after argument list`), I can provide the corrected version of the full `index.html` code, including the fix for the JavaScript error in the canvas animation section. The error was caused by the invalid text `Параметры:` in the `ctx.clearRect` line, which I'll remove to ensure proper execution.
+
+Below is the corrected `index.html` with the fixed JavaScript code and all other sections preserved. The change is specifically in the `<script>` section where `ctx.clearRect(0,Параметры:0, width, height);` is corrected to `ctx.clearRect(0, 0, width, height);`.
+
+<xaiArtifact artifact_id="e2fbc2aa-e1e3-4688-8d4c-24cded1e9459" artifact_version_id="6d6a1d35-ba3b-449b-91a3-4bce6b0c9a7d" title="index.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Esteban Eduardo Morales Rojas - Materials Science Maverick</title>
+    <meta name="google-site-verification" content="3daJLYqHZMrq78bGICReEWkbJZ-tYbSYqI8i7pY-9wQ" />
+    <meta name="msvalidate.01" content="D509C06839E93EE9EDD07B351900578F" />
+    <meta name="description" content="Esteban Morales - PhD Student in Materials Science & Engineering at UMass Amherst. Research in wearable tech, optoelectronics, and sensors.">
+    <meta name="keywords" content="Esteban Morales, UMass Amherst, Materials Science, Wearable Electronics, Optoelectronics, GitHub, Research">
+    <meta name="author" content="Esteban Eduardo Morales Rojas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -239,7 +255,7 @@
         const symbolArray = Array.from({ length: 20 }, () => new Symbol());
 
         function animate() {
-            ctx.clearRect(0,Параметры:0, width, height);
+            ctx.clearRect(0, 0, width, height);
             symbolArray.forEach(symbol => {
                 symbol.update();
                 symbol.draw();
