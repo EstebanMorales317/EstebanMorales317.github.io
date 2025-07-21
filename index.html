@@ -35,13 +35,23 @@
         .tab-content.active .gallery-img {
             animation: fadeIn 0.5s ease forwards;
         }
+        .header-img {
+            animation: zoomIn 1s ease forwards;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0.7; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white text-center py-12">
-        <img src="Esteban_Lab.jpg" alt="Esteban in the Lab" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500">
-        <h1 class="text-4xl md:text-5xl font-bold">Esteban Eduardo Morales Rojas</h1>
-        <p class="text-lg md:text-xl mt-2">PhD Student | Materials Science & Engineering | UMass Amherst</p>
+    <header class="bg-gradient-to-r from-blue-900 to-blue-700 text-white text-center py-16 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10">
+            <img src="Esteban_Lab.jpg" alt="Esteban in the Lab" class="header-img w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg object-cover">
+            <h1 class="text-4xl md:text-6xl font-bold">Esteban Eduardo Morales Rojas</h1>
+            <p class="text-lg md:text-2xl mt-3">PhD Student | Materials Science & Engineering | UMass Amherst</p>
+        </div>
     </header>
 
     <nav class="bg-white shadow sticky top-0 z-10">
